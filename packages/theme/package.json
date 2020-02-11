@@ -1,0 +1,42 @@
+{
+  "name": "@design-system/theme",
+  "version": "0.0.1",
+  "description": "design system themes",
+  "sideEffects": false,
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "scripts": {
+    "compile": "babel src --config-file ../../babel.config.js --extensions '.js' --ignore '**/*.test.js,**/*.story.js'",
+    "build:esm": "BABEL_ENV=esm npm run compile -- --out-dir dist/esm",
+    "build:cjs": "BABEL_ENV=cjs npm run compile -- --out-dir dist/cjs",
+    "build:umd": "cross-env BABEL_ENV=rollup rollup -c",
+    "build": "npm run build:umd && npm run build:cjs && npm run build:esm",
+    "prebuild": "shx rm -rf dist",
+    "storybook": "start-storybook",
+    "storybook:build": "build-storybook -c .storybook"
+  },
+  "keywords": [
+    "ui",
+    "packages"
+  ],
+  "author": "Harpreet Singh <hsit18@gmail.com>",
+  "homepage": "https://github.com/hsit18/design-system#readme",
+  "license": "ISC",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsit18/design-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hsit18/design-system/issues"
+  }
+}
