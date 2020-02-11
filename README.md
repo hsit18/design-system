@@ -1,2 +1,5 @@
 # design-system
-design system in reactJS
+
+## Initial setup
+ 1. lerna init
+ 
