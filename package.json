@@ -4,6 +4,16 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "build": "lerna run build",
+    "build:watch": "WATCH_MODE=true lerna run --parallel build -- --watch",
+    "storybook": "start-storybook",
+    "storybook:build": "build-storybook -c .storybook",
+    "clean": "lerna clean",
+    "bootstrap": "lerna bootstrap",
+    "setup": "yarn clean && yarn bootstrap && yarn build",
+    "publish": "lerna publish"
+  },
   "dependencies": {
     "@testing-library/react": "^9.4.0",
     "babel-jest": "^25.1.0",
@@ -36,7 +46,9 @@
     "@storybook/addon-docs": "^5.3.12",
     "@storybook/addon-info": "^5.3.12",
     "@storybook/addon-knobs": "^5.3.12",
+    "@storybook/addon-links": "^5.3.12",
     "@storybook/addon-viewport": "^5.3.12",
+    "@storybook/addons": "^5.3.12",
     "@storybook/react": "^5.3.12",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
