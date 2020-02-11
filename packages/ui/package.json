@@ -1,0 +1,34 @@
+{
+  "name": "@design-system/ui",
+  "version": "0.0.1",
+  "description": "design system ui packages",
+  "sideEffects": false,
+  "keywords": [
+    "ui",
+    "packages"
+  ],
+  "author": "Harpreet Singh <hsit18@gmail.com>",
+  "homepage": "https://github.com/hsit18/design-system#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsit18/design-system.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/hsit18/design-system/issues"
+  }
+}
