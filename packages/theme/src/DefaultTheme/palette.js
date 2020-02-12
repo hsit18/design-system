@@ -1,5 +1,3 @@
-import _merge from 'lodash/merge';
-
 import { STATUS_COLOR, THEME_COLOR, TEXT_COLOR, BORDER } from './constant';
 
 const colors = {

@@ -1,5 +1,3 @@
-import _merge from 'lodash/merge';
-
 import { TYPOGRAPHY } from './constant';
 
 const FontWeight = {
@@ -41,26 +39,12 @@ const DEFAULT_TYPOGRAPHY = {
     fontSize: 14,
     fontWeight: FontWeight.REGULAR,
     textTransform: 'uppercase',
-  }
+  },
 };
 
-const createTypography = (typography, { rootSize }) => {
-  const pxToRem = size => `${size / rootSize}rem`;
-  const mergedTypography = _merge(DEFAULT_TYPOGRAPHY, typography) || {};
-  const allTypographies = Object.keys(mergedTypography).reduce(
-    (acc, key) => ({
-      ...acc,
-      [key]: {
-        ...mergedTypography[key],
-        fontSize: pxToRem(mergedTypography[key].fontSize || rootSize),
-      },
-    }),
-    {},
-  );
-  return {
-    pxToRem,
-    ...allTypographies,
-  };
-};
+const pxToRem = size => `${size / rootSize}rem`;
 
-export default createTypography;
+export default {
+  pxToRem,
+  ...DEFAULT_TYPOGRAPHY,
+};

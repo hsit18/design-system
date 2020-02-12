@@ -1,12 +1,23 @@
 /* eslint react/no-array-index-key: 0 */
 import React from 'react';
 import styled from 'styled-components';
+import _merge from 'lodash/merge';
 import { storiesOf } from '@storybook/react';
-import { lighten, darken } from '@ag-design-system/utils';
-import { createAgDesignTheme } from './index';
+import { lighten, darken } from '@design-system/utils';
+
+import { DefaultTheme } from './index';
+import { createDesignTheme } from '../index';
 import { STATUS_COLOR, THEME_COLOR } from './constant';
 
-const theme = createAgDesignTheme();
+const theme = DefaultTheme;
+console.log(theme);
+const updatedTheme = createDesignTheme(_merge(DefaultTheme, {
+  config: {
+    borderRadius: '12px',
+  },
+}));
+console.log(updatedTheme);
+
 const ColorContainer = styled.div`
   display: flex;
   text-align: center;
@@ -63,9 +74,7 @@ const Colors = ({ type, colors }) => {
           >
             {c}
           </ColorBadge>
-          <ColorCode>
-            {ratioType(theme.palette.colors[c], type)}
-          </ColorCode>
+          <ColorCode>{ratioType(theme.palette.colors[c], type)}</ColorCode>
         </BadgeWrapper>
       ))}
     </ColorContainer>
@@ -101,7 +110,7 @@ stories.add(
   {
     info: {
       text: `
-  import { Themes } from '@ag-design-system/themes';
+  import { DefaultTheme } from '@design-system/themes';
 `,
     },
   },
