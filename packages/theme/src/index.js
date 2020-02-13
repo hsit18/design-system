@@ -1,2 +1,2 @@
-export * from './ThemeConfig';
+export * from './CreateTheme';
 export * from './DefaultTheme';

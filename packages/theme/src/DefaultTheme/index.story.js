@@ -6,12 +6,12 @@ import { storiesOf } from '@storybook/react';
 import { lighten, darken } from '@design-system/utils';
 
 import { DefaultTheme } from './index';
-import { createDesignTheme } from '../index';
+import { createTheme } from '../index';
 import { STATUS_COLOR, THEME_COLOR } from './constant';
 
 const theme = DefaultTheme;
 console.log(theme);
-const updatedTheme = createDesignTheme(_merge(DefaultTheme, {
+const updatedTheme = createTheme(_merge(DefaultTheme, {
   config: {
     borderRadius: '12px',
   },
