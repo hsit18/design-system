@@ -11,12 +11,6 @@ import { STATUS_COLOR, THEME_COLOR } from './constant';
 
 const theme = DefaultTheme;
 console.log(theme);
-const updatedTheme = createTheme(_merge(DefaultTheme, {
-  config: {
-    borderRadius: '12px',
-  },
-}));
-console.log(updatedTheme);
 
 const ColorContainer = styled.div`
   display: flex;
@@ -81,10 +75,10 @@ const Colors = ({ type, colors }) => {
   );
 };
 
-const stories = storiesOf('Themes|Themes', module);
+const stories = storiesOf('Themes|DefaultTheme', module);
 
 stories.add(
-  'colors',
+  'Brand colors',
   () => {
     return (
       <React.Fragment>
@@ -96,6 +90,23 @@ stories.add(
           <ColorTitle>Brand Colors Dark</ColorTitle>
           <Colors type="dark" colors={Object.values(THEME_COLOR)} />
         </GroupWrapper>
+      </React.Fragment>
+    );
+  },
+  {
+    info: {
+      text: `
+  import { DefaultTheme } from '@design-system/themes';
+`,
+    },
+  },
+);
+
+stories.add(
+  'Status colors',
+  () => {
+    return (
+      <React.Fragment>
         <GroupWrapper>
           <ColorTitle>Status Colors</ColorTitle>
           <Colors type="color" colors={Object.values(STATUS_COLOR)} />
