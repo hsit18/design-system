@@ -12,7 +12,10 @@
     "clean": "lerna clean",
     "bootstrap": "lerna bootstrap",
     "setup": "yarn clean && yarn bootstrap && yarn build",
-    "publish": "lerna publish"
+    "publish": "lerna publish",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --collectCoverage",
+    "test:report": "majestic"
   },
   "dependencies": {
     "@testing-library/react": "^9.4.0",
@@ -82,5 +85,31 @@
     "stylelint-order": "^4.0.0",
     "stylelint-prettier": "^1.1.2",
     "stylelint-processor-styled-components": "^1.9.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^test-utils": "<rootDir>/test/test-utils.js",
+      "\\.(css)$": "<rootDir>/test/styleMock.js"
+    },
+    "transform": {
+      "^.+\\.(js|jsx|ts)$": "babel-jest"
+    },
+    "testMatch": [
+      "<rootDir>/packages/*/src/*/*.test.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/test/"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/**/*.js",
+      "!src/assets/**"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ]
+  },
+  "majestic": {
+    "jestScriptPath": "./node_modules/jest/bin/jest.js"
   }
 }
