@@ -40,6 +40,7 @@
     "url": "https://github.com/hsit18/design-system/issues"
   },
   "dependencies": {
+    "@design-system/theme": "^0.0.1",
     "@design-system/utils": "^0.0.1"
   }
 }
