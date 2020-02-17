@@ -21,6 +21,9 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
+  /**
+   * Typography variants: H1, body, subtext...
+   */ 
   variant: PropTypes.string,
   color: PropTypes.string,
   outline: PropTypes.bool,

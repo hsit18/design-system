@@ -8,10 +8,10 @@ import { Button } from './index';
 export default {
   component: Button,
   title: 'UI|Button',
-  parameters: {notes: `import { Button } from '@design-system/ui`}
+  parameters: {componentSubtitle: `import { Button } from '@design-system/ui`}
 };
 
-export const variants = () => (
+export const basic = () => (
   <Button
     color={select(...allColorVariants())}
     size={select('Size', ['large', 'medium', 'small'], 'medium')}
