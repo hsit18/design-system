@@ -25,7 +25,7 @@ lerna add <DEPENDENT_PACKAGE_NAME> --scope=<DESTINATION_PACKAGE_NAME>
 	**Default theme**
 	```js
 	import { DefaultTheme } from '@design-system/themes';
-	    <ThemeProvider  theme={DefaultTheme}>
+	    <ThemeProvider theme={DefaultTheme}>
 		    <YOUR_APP />
 		</ThemeProvider>
 	```
@@ -33,7 +33,7 @@ lerna add <DEPENDENT_PACKAGE_NAME> --scope=<DESTINATION_PACKAGE_NAME>
 	**Create theme**
 	```js
 	import { createTheme } from '@design-system/themes';
-		const theme = createTheme({
+		const siteTheme = createTheme({
 			config: {
 				zIndex: {
 					modal: 500,
@@ -44,7 +44,7 @@ lerna add <DEPENDENT_PACKAGE_NAME> --scope=<DESTINATION_PACKAGE_NAME>
 				},
 			}
 		});
-	    <ThemeProvider  theme={DefaultTheme}>
+	    <ThemeProvider theme={siteTheme}>
 		    <YOUR_APP />
 		</ThemeProvider>
 	```	
